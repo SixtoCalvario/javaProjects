@@ -14,15 +14,14 @@ import java.util.Scanner;
 
 // start of main method
 public static void main(String[] args) {
-    Scanner input = new Scanner(System.in`);
-
+    Scanner input = new Scanner(System.in);
     // takes user input 
     System.out.print("Enter the code: ");
     String userCode = input.nextLine(); 
     input.close(); 
 
     // the method returns if the code the user enters works  
-    doesChestOpen(userCode)
+    doesChestOpen(userCode);
 }
 // end of main method 
 
@@ -34,7 +33,7 @@ public static String doesChestOpen(String code) {
     String works = "YES";
 
     // this string returns if it doesnt work 
-    String notWorks = "NO"
+    String notWorks = "NO";
 
     // the users input gets split into individual ints 
     int digit1 = Intger.parseInt(code.chartAt(0)+"");
@@ -45,7 +44,7 @@ public static String doesChestOpen(String code) {
     int digit6 = Integer.parseInt(code.charAt(5)+"");
     
     // sum of digits 4, 5, and 6
-    int sum = digit4+digit5+digit6
+    int sum = digit4+digit5+digit6;
 
     // both have to be true for the chest to open
     boolean firstCheck = false;
