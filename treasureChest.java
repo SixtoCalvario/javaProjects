@@ -21,7 +21,7 @@ public static void main(String[] args) {
     input.close(); 
 
     // the method returns if the code the user enters works  
-    doesChestOpen(userCode);
+    SystedoesChestOpen(userCode);
 }
 // end of main method 
 
@@ -36,7 +36,7 @@ public static String doesChestOpen(String code) {
     String notWorks = "NO";
 
     // the users input gets split into individual ints 
-    int digit1 = Intger.parseInt(code.chartAt(0)+"");
+    int digit1 = Integer.parseInt(code.charAt(0)+"");
     int digit2 = Integer.parseInt(code.charAt(1)+"");
     int digit3 = Integer.parseInt(code.charAt(2)+"");
     int digit4 = Integer.parseInt(code.charAt(3)+"");
