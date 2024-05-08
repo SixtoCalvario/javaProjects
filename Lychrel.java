@@ -13,8 +13,17 @@ public class Lychrel{
         int userInt = input.nextInt();
         // setting their int to a big int
         A = BigInteger.valueOf(userInt);
-
     }
     // end of main method 
 
+
+    // start of lychrel num method 
+    public static String isLychrel(BigInteger num){
+        
+        // for loop iterates 50 times 
+        for(int i=0; i<50; i++){
+
+        }
+    } 
+    // end of lychrel num method 
 }
