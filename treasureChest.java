@@ -21,7 +21,7 @@ public static void main(String[] args) {
     input.close(); 
 
     // the method returns if the code the user enters works  
-    SystedoesChestOpen(userCode);
+    System.out.println(doesChestOpen(userCode));
 }
 // end of main method 
 
