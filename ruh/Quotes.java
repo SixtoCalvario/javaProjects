@@ -1,3 +1,4 @@
+package ruh;
 import java.util.Scanner;
 public class Quotes {
 

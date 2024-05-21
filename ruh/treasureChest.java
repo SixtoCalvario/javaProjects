@@ -1,3 +1,4 @@
+package ruh;
 /*
 There is a treasure chest with 1 million dollars. 
 The chest has a 6-digit combination lock that opens under the following conditions: 

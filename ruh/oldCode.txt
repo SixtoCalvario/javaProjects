@@ -1,0 +1,33 @@
+    // start of reverse method 
+    public static String reverse(BigInteger numBeingReversed) {
+        // connvert big int to a str
+        int num1 = numBeingReversed.intValue();
+        String num1Str = num1+"";
+
+        // find the length so we can use it for a array
+        int numLength = num1Str.length();
+        
+        // create a big int array 
+        BigInteger[] bigArray = new BigInteger[numLength];
+
+        // each int value gets assigned a big int array index
+        for(int i=0; i<bigArray.length; i++) {
+            bigArray[i] = BigInteger.valueOf(Integer.parseInt((num1Str.charAt(i)+"")));
+        }
+
+        // reverse cursed technique 
+        BigInteger[] reversedArray = new BigInteger[numLength];
+        int j = numLength;
+        for(int i=0; i<bigArray.length; i++) {
+
+            reversedArray[j-1] = bigArray[i];
+            j--;
+        }
+
+        String reverseString = "";
+        for(int i=0; i<bigArray.length;i++){
+            reverseString = reversedArray[i]+"";
+        } 
+        return reverseString;
+    }
+    // end of reverse method 
