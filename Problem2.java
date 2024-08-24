@@ -1,7 +1,7 @@
 //Problem 02: Cell Data
 import java.util.Scanner;
 import java.util.Arrays;
-public class Problem02{
+public class Problem2{
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in); 
@@ -18,6 +18,7 @@ public class Problem02{
             operation = input.nextLine().toUpperCase();
             System.out.println(operator(XYZ, operation));
         }
+        input.close();
     }
 
 
@@ -84,7 +85,7 @@ public class Problem02{
         // reading array from back to start
         for (int i = (inputArray.length-1); i>=0; i--) {
             
-            if(inputArray[i].contains("ADD")) {
+            if(inputArray[i].contains("ADD") && cell2.equals("") ) {
                 cell2 = inputArray[i+1];
                 if(cell2.equals("X")) {
                     cell2 = letters[0];
@@ -98,9 +99,23 @@ public class Problem02{
                 int n = Integer.parseInt(""+(inputArray[i].charAt(inputArray[i].length()-1)));
                 cell2 = add(cell2, n);
             }
+            else{
+                cell1 = inputArray[i+1];
+                if(cell1.equals("X")) {
+                    cell1 = letters[0];
+                }
+                if(cell1.equals("Y")){
+                    cell2 = letters[1];
+                }
+                if(cell1.equals("Z")) {
+                    cell1 = letters[2];
+                }
+                int n = Integer.parseInt(""+(inputArray[i].charAt(inputArray[i].length()-1)));
+                cell1 = add(cell1, n);
+            }
+            
 
-
-            if(inputArray[i].contains("SUB")) {
+            if(inputArray[i].contains("SUB") && cell2.equals("") ) {
                 cell2 = inputArray[i+1];
                 if(cell2.equals("X")) {
                     cell2 = letters[0];
@@ -114,7 +129,20 @@ public class Problem02{
                 int n = Integer.parseInt(""+(inputArray[i].charAt(inputArray[i].length()-1)));
                 cell2 = subtract(cell2, n);
             }
-
+            else{
+                cell1 = inputArray[i+1];
+                if(cell1.equals("X")) {
+                    cell1 = letters[0];
+                }
+                if(cell1.equals("Y")){
+                    cell1 = letters[1];
+                }
+                if(cell1.equals("Z")) {
+                    cell1 = letters[2];
+                }
+                int n = Integer.parseInt(""+(inputArray[i].charAt(inputArray[i].length()-1)));
+                cell1 = subtract(cell1, n); 
+            }
 
             if(inputArray[i].contains("UNI")) {
                 // this is done when there are no other operations
@@ -139,10 +167,12 @@ public class Problem02{
                         cell2 = letters[2];
                     }
                     cell1 = union(cell1, cell2);
+                    return cell1;
                 }
                 // this is done when there is other operations performed
                 else{
                     cell1 = union(cell1, cell2);
+                    return cell1;
                 }
             }
 
@@ -168,11 +198,11 @@ public class Problem02{
                     if(inputArray[2].equals("Z")) {
                         cell2 = letters[2];
                     }
-                    cell1 = intersect(cell1, cell2);
+                    return intersect(cell1, cell2);
                 }
                 // this is done when there is other operations performed
                 else{
-                    cell1 = intersect(cell1, cell2);
+                    return intersect(cell1, cell2);
                 }
             }
 
@@ -187,12 +217,16 @@ public class Problem02{
                 if(cell1.equals("Z")) {
                     cell2 = letters[2];
                 }
-                cell2 = divide(cell2); 
+                cell2 = divide(cell2);
+                return cell2;
             }
 
         }
 
-
+        if(cell1.equals("")){
+            return cell2;
+        }
+        return cell1+" "+cell2;
 
 
     }
